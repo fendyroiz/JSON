@@ -44,7 +44,7 @@ npm install react-icons --save
 
 ## Imagen del proyecto
 
-![capfinal](https://github.com/fendyroiz/JSON/assets/115648087/ef159663-5619-411e-853c-19df4853796f)
+![capfinal](https://github.com/fendyroiz/JSON/assets/115648087/c4caf98e-a2bb-42b0-b5b0-e1edc245bce1)
 
 
 ## Deploy on Vercel
