@@ -1,14 +1,16 @@
 'use client'
 import React, { useState } from 'react';
-import palabras from './alfabeto.js'; 
+import palabras from './alfabeto.js';
+import validarJSON from './validaciones.js';
 
 const Lector = () => {
   const [contenido, setContenido] = useState('');
   const [coincidencias, setCoincidencias] = useState([]);
+  const [errores, setErrores] = useState([]);
 
   const leerArchivo = (e) => {
     const archivo = e.target.files[0];
-    if (archivo === null || archivo === undefined) {
+    if (!archivo) {
       return;
     }
 
@@ -17,20 +19,27 @@ const Lector = () => {
     lector.onload = function (e) {
       const contenido = e.target.result;
       setContenido(contenido);
+      const errores = validarJSON(contenido);
+      
+      if (errores.length > 0) {
+        setErrores(errores);
+        setCoincidencias([]);
+        return;
+      }
+
       const caracteresEnArchivo = contenido.split('');
       const coincidencias = [];
 
       caracteresEnArchivo.forEach((caracter) => {
         let id;
-        // Busca el valor del caracter en el alfabeto y obtiene su número de identificación
         if (caracter === '\n') {
-          id = palabras[97]; // [ENTER]
+          id = palabras[92]; // enter
           coincidencias.push({ id, caracter: "[ENTER]" });
         } else if (caracter === '\t') {
-          id = palabras[96]; // [TAB]
+          id = palabras[94]; // tab
           coincidencias.push({ id, caracter: "[TAB]" });
         } else if (caracter === ' ') {
-          id = palabras[98]; // Espacio
+          id = palabras[90]; // Espacio
           coincidencias.push({ id, caracter: "[ESPACIO]" });
         } else {
           id = Object.keys(palabras).find(key => palabras[key] === caracter);
@@ -39,6 +48,7 @@ const Lector = () => {
       });
 
       setCoincidencias(coincidencias);
+      setErrores([]);
     };
 
     lector.readAsText(archivo);
@@ -47,6 +57,7 @@ const Lector = () => {
   const limpiar = () => {
     setContenido('');
     setCoincidencias([]);
+    setErrores([]);
   };
 
   return (
@@ -71,6 +82,19 @@ const Lector = () => {
             ))}
           </ul>
         </div>
+
+        {errores.length > 0 && (
+          <div className="mt-4 md:mt-8">
+            <h2>Errores encontrados:</h2>
+            <ul>
+              {errores.map((error, index) => (
+                <li key={index}>
+                  {error.mensaje} en la posición {error.posicion}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="mt-4 md:mt-8">
           <button onClick={limpiar} className="bg-[#ff0a54] text-white px-2 py-1 rounded-md font-serif">

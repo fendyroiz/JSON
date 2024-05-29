@@ -34,10 +34,7 @@ const Navbar = () => {
             <div className=' p-1   font-serif text-[#ff0a54] text-lg'>
                <Link href={'/analizadores'}>comenzar a analizar</Link>
             </div>
-            <div className=' p-1   font-serif text-[#ff0a54] text-lg'>
-               <Link href={'/toke'}>Encontrar Tokens</Link>
-            </div>
-           
+          
           </div>
 
           
