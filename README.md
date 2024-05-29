@@ -37,10 +37,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 para instalar las dependencias necesarias en este proyecto, se necesitaran ejecutar los siguientes comandos:
 
+
+```bash
 npx create-next-app@latest
+# 
 npm install @headlessui/react
+# 
 npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+# 
 npm install react-icons --save
+
+```
+
+
+
+
+
 
 ## Imagen del proyecto
 
