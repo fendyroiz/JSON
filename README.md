@@ -1,3 +1,7 @@
+# Analizador de JSON
+
+En este proyecto se busca la creacion de un analizador de JSON. EL cual se creo en Next.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -28,6 +32,20 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Intalacion
+
+para instalar las dependencias necesarias en este proyecto, se necesitaran ejecutar los siguientes comandos:
+
+npx create-next-app@latest
+npm install @headlessui/react
+npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+npm install react-icons --save
+
+## Imagen del proyecto
+
+![capfinal](https://github.com/fendyroiz/JSON/assets/115648087/ef159663-5619-411e-853c-19df4853796f)
+
 
 ## Deploy on Vercel
 
