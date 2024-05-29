@@ -1,6 +1,6 @@
 # Informacion personal de la elaboracion del proyecto
 
-En este proyecto tuvimos la opcion de elegir muestro lenguaje de programcion y tecnologias a utilizar
+En este proyecto tuvimos la opcion de elegir nuestro lenguaje de programacion y tecnologias a utilizar
 Permitiendonos tener una variedad de caminos para llegar al mismo objetivo el cual es un analizador JSON
 
 ## Flujo
